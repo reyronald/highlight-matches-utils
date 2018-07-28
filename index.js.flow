@@ -1,0 +1,22 @@
+// @flow
+
+declare module.exports: {
+  highlightChars<T>(
+    text: string,
+    chars: string,
+    matchesWrapper: (s: string) => T,
+    noMatchesWrapper?: (s: string) => T
+  ): Array<T>,
+
+  highlightMatches<T>(
+    text: string,
+    matches: number[],
+    matchesWrapper: (s: string) => T,
+    noMatchesWrapper?: (s: string) => T
+  ): Array<T>,
+
+  splitMatches(
+    text: string,
+    matches: number[]
+  ): Array<{| str: string, isMatch: boolean |}>
+}

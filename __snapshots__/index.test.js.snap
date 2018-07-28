@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`highlightChars match using chalk wrappers 1`] = `
+Array [
+  "[90msrc/[39m",
+  "[0mreport[0m",
+  "[90mers/__tests__/[39m",
+  "[0msumm[0m",
+  "[90mary_reporter.test.js[39m",
+]
+`;
+
+exports[`highlightChars match using matchesWrapper that return React elements 1`] = `
+Array [
+  "The quick ",
+  <mark>
+    brown
+  </mark>,
+  " fox jumps over the lazy dog",
+]
+`;
+
+exports[`highlightChars match using matchesWrapper that return React elements 2`] = `
+Array [
+  <span>
+    The quick 
+  </span>,
+  <mark>
+    brown
+  </mark>,
+  <span>
+     fox jumps over the lazy dog
+  </span>,
+]
+`;
+
+exports[`highlightMatches match using matchesWrapper that return React elements 1`] = `
+Array [
+  "The quick ",
+  <mark>
+    brown
+  </mark>,
+  " fox jumps over the lazy dog",
+]
+`;
+
+exports[`highlightMatches match using matchesWrapper that return React elements 2`] = `
+Array [
+  <span>
+    The quick 
+  </span>,
+  <mark>
+    brown
+  </mark>,
+  <span>
+     fox jumps over the lazy dog
+  </span>,
+]
+`;

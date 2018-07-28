@@ -1,0 +1,60 @@
+{
+  "name": "highlight-matches-utils",
+  "version": "0.1.0-beta.1",
+  "description": "Utility functions to mark and/or highlight character matches in texts",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "index.js.flow",
+    "index.test.js",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "jest",
+    "flow": "flow"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reyronald/highlight-matches-utils.git"
+  },
+  "author": {
+    "name": "Ronald Rey",
+    "email": "reyronald@gmail.com",
+    "url": "https://github.com/reyronald"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reyronald/highlight-matches-utils/issues"
+  },
+  "homepage": "https://github.com/reyronald/highlight-matches-utils#readme",
+  "dependencies": {
+    "fuzzaldrin-plus": "^0.6.0"
+  },
+  "devDependencies": {
+    "chalk": "^2.4.1",
+    "flow-bin": "^0.77.0",
+    "jest": "^23.4.2",
+    "react": "^16.4.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [
+    "mark",
+    "highlight",
+    "match",
+    "matches",
+    "wrap",
+    "fuzzy",
+    "fuzzysearch",
+    "fuzzaldrin",
+    "fuzzaldrin-plus",
+    "search",
+    "filter"
+  ]
+}
