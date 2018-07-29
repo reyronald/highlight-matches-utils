@@ -178,12 +178,8 @@ describe('highlightChars', () => {
     const text = 'src/reporters/__tests__/summary_reporter.test.js'
     const result = highlightChars(text, 'reportsumm', chalk.reset, chalk.gray)
 
-    expect(result).toEqual([
-      '[90msrc/[39m',
-      '[0mreport[0m',
-      '[90mers/__tests__/[39m',
-      '[0msumm[0m',
-      '[90mary_reporter.test.js[39m'
-    ])
+    expect(result.join('')).toBe(
+      '\u001b[90msrc/\u001b[39m\u001b[0mreport\u001b[0m\u001b[90mers/__tests__/\u001b[39m\u001b[0msumm\u001b[0m\u001b[90mary_reporter.test.js\u001b[39m'
+    )
   })
 })
