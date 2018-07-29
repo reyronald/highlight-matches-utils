@@ -1,7 +1,6 @@
 const { splitMatches, highlightMatches, highlightChars } = require('.')
 const { match } = require('fuzzaldrin-plus')
 const React = require('react')
-const chalk = require('chalk')
 
 describe('splitMatches', () => {
   it('simple case', () => {
@@ -172,11 +171,5 @@ describe('highlightChars', () => {
     //      fox jumps over the lazy dog
     //   </span>,
     // ]
-  })
-
-  it('match using chalk wrappers', () => {
-    const text = 'src/reporters/__tests__/summary_reporter.test.js'
-    const result = highlightChars(text, 'reportsumm', chalk.reset, chalk.gray)
-    expect(result).toMatchSnapshot()
   })
 })

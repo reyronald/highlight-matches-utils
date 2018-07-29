@@ -18,5 +18,5 @@ declare module.exports: {
   splitMatches(
     text: string,
     matches: number[]
-  ): Array<{| str: string, isMatch: boolean |}>
+  ): Array<{| isMatch: boolean, str: string |}>
 }

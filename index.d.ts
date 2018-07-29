@@ -64,6 +64,6 @@ export function highlightMatches<T>(
 export function splitMatches(
   text: string,
   matches: number[]
-): { str: string; isMatch: boolean }[]
+): { isMatch: boolean; str: string }[]
 
 export as namespace highlightMatchesUtils
