@@ -17,8 +17,8 @@ in a UI.
 export function highlightChars<T>(
   text: string,
   chars: string,
-  matchesWrapper: (string) => T,
-  noMatchesWrapper?: (string) => T
+  matchesWrapper: (s: string) => T,
+  noMatchesWrapper?: (s: string) => T
 ): T[]
 ```
 
@@ -57,8 +57,8 @@ in a UI.
 export function highlightMatches<T>(
   text: string,
   matches: number[],
-  matchesWrapper: (string) => T,
-  noMatchesWrapper?: (string) => T
+  matchesWrapper: (s: string) => T,
+  noMatchesWrapper?: (s: string) => T
 ): Array<T>,
 ```
 
@@ -73,7 +73,7 @@ all the characters that are matches and not matches.
 export function splitMatches(
   text: string,
   matches: number[]
-): Array<{| str: string, isMatch: boolean |}>
+): Array<{| isMatch: boolean, str: string |}>
 ```
 
 ### Prior Art
