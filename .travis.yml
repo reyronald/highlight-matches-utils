@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "node"
-install:
+before_install:
   - npm install -g codecov
 script:
   - yarn test --coverage && codecov
