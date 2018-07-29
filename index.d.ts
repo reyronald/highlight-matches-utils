@@ -10,7 +10,7 @@
  *
  * @example
  * highlightMatches('How are you?', 'are', s => `[${s}]`)
- * // 'How [are] you?'
+ * // => ['How ', '[are]', ' you?']
  */
 export function highlightChars<T>(
   text: string,
@@ -34,7 +34,7 @@ export function highlightChars<T>(
  *
  * @example
  * highlightMatches('How are you?', [4, 5, 6], s => `[${s}]`)
- * // 'How [are] you?'
+ * // => ['How ', '[are]', ' you?']
  */
 export function highlightMatches<T>(
   text: string,

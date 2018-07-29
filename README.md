@@ -2,6 +2,12 @@
 
 > Utility functions to mark and highlight character matches in text
 
+[![Travis (.org)](https://img.shields.io/travis/reyronald/highlight-matches-utils.svg)](https://travis-ci.org/reyronald/highlight-matches-utils)
+[![Codecov](https://img.shields.io/codecov/c/github/reyronald/highlight-matches-utils.svg)](https://codecov.io/gh/reyronald/highlight-matches-utils)
+[![GitHub](https://img.shields.io/github/license/reyronald/highlight-matches-utils.svg)](https://github.com/reyronald/highlight-matches-utils/blob/master/LICENSE)
+[![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/highlight-matches-utils.svg)](https://unpkg.com/highlight-matches-utils/)
+[![npm bundle size (minified)](https://img.shields.io/bundlephobia/minzip/highlight-matches-utils.svg)](https://unpkg.com/highlight-matches-utils/)
+
 ## API
 
 **For more in-depth examples, [check the test file](./index.test.js).**  
