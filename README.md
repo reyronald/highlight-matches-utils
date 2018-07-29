@@ -2,6 +2,9 @@
 
 > Utility functions to mark and highlight character matches in text
 
+[![Travis (.org)](https://img.shields.io/travis/reyronald/highlight-matches-utils.svg)](https://travis-ci.org/reyronald/highlight-matches-utils)
+[![Codecov](https://img.shields.io/codecov/c/github/reyronald/highlight-matches-utils.svg)](https://codecov.io/gh/reyronald/highlight-matches-utils)
+
 ## API
 
 **For more in-depth examples, [check the test file](./index.test.js).**  
