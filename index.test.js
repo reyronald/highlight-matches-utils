@@ -177,6 +177,13 @@ describe('highlightChars', () => {
   it('match using chalk wrappers', () => {
     const text = 'src/reporters/__tests__/summary_reporter.test.js'
     const result = highlightChars(text, 'reportsumm', chalk.reset, chalk.gray)
-    expect(result).toMatchSnapshot()
+
+    expect(result).toEqual([
+      '[90msrc/[39m',
+      '[0mreport[0m',
+      '[90mers/__tests__/[39m',
+      '[0msumm[0m',
+      '[90mary_reporter.test.js[39m'
+    ])
   })
 })
