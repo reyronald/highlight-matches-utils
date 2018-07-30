@@ -1,6 +1,6 @@
 {
   "name": "highlight-matches-utils",
-  "version": "0.1.0-beta.1",
+  "version": "0.1.0-beta.2",
   "description": "Utility functions to mark and/or highlight character matches in texts",
   "main": "index.js",
   "files": [

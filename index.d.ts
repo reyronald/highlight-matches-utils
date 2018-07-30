@@ -1,3 +1,8 @@
+export type SplitMatchesResult = Array<{
+  isMatch: boolean
+  str: string
+}>
+
 /**
  * Calls the given functions on matching and non-matching characters
  * of the given text. Useful when you want to highlight matching characters
@@ -15,8 +20,8 @@
 export function highlightChars<T>(
   text: string,
   chars: string,
-  matchesWrapper: (s: string) => T,
-  noMatchesWrapper?: (s: string) => T
+  matchesWrapper: (s: string, index: number, array: SplitMatchesResult) => T,
+  noMatchesWrapper?: (s: string, index: number, array: SplitMatchesResult) => T
 ): T[]
 
 /**
@@ -39,8 +44,8 @@ export function highlightChars<T>(
 export function highlightMatches<T>(
   text: string,
   matches: number[],
-  matchesWrapper: (s: string) => T,
-  noMatchesWrapper?: (s: string) => T
+  matchesWrapper: (s: string, index: number, array: SplitMatchesResult) => T,
+  noMatchesWrapper?: (s: string, index: number, array: SplitMatchesResult) => T
 ): T[]
 
 /**
@@ -64,6 +69,6 @@ export function highlightMatches<T>(
 export function splitMatches(
   text: string,
   matches: number[]
-): { isMatch: boolean; str: string }[]
+): SplitMatchesResult
 
 export as namespace highlightMatchesUtils

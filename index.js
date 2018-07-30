@@ -2,13 +2,17 @@
 
 var match = require('fuzzaldrin-plus').match
 
+/*::
+type SplitMatchesResult = Array<{|
+  isMatch: boolean,
+  str: string
+|}> 
+*/
+
 function splitMatches(
   text /*: string */,
   matches /*: number[] */
-) /*: Array<{|
-  isMatch: boolean,
-  str: string
-|}> */ {
+) /*: SplitMatchesResult */ {
   var _matches = matches.slice(0)
   var result = []
   for (var i = 0; i < text.length; i += 1) {
@@ -30,8 +34,8 @@ function splitMatches(
 function highlightMatches /*:: <T> */(
   text /*: string */,
   matches /*: number[] */,
-  matchesWrapper /*: (s: string) => T */,
-  noMatchesWrapper /*: (s: string) => T */
+  matchesWrapper /*: (s: string, index: number, array: SplitMatchesResult) => T */,
+  noMatchesWrapper /*: (s: string, index: number, array: SplitMatchesResult) => T */
 ) /*: Array<T> */ {
   if (noMatchesWrapper == null) {
     // $FlowFixMe
@@ -46,8 +50,10 @@ function highlightMatches /*:: <T> */(
   }
 
   var splitMatchesResult = splitMatches(text, matches)
-  var result = splitMatchesResult.map(function(r) {
-    return r.isMatch ? matchesWrapper(r.str) : noMatchesWrapper(r.str)
+  var result = splitMatchesResult.map(function(r, i, a) {
+    return r.isMatch
+      ? matchesWrapper(r.str, i, a)
+      : noMatchesWrapper(r.str, i, a)
   })
 
   return result
@@ -56,8 +62,8 @@ function highlightMatches /*:: <T> */(
 function highlightChars /*:: <T> */(
   text /*: string */,
   chars /*: string */,
-  matchesWrapper /*: (s: string) => T */,
-  noMatchesWrapper /*: (s: string) => T */
+  matchesWrapper /*: (s: string, index: number, array: SplitMatchesResult) => T */,
+  noMatchesWrapper /*: (s: string, index: number, array: SplitMatchesResult) => T */
 ) /*: Array<T> */ {
   var matches = match(text, chars)
   var result = highlightMatches(text, matches, matchesWrapper, noMatchesWrapper)

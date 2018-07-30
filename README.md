@@ -25,8 +25,8 @@ in a UI.
 export function highlightChars<T>(
   text: string,
   chars: string,
-  matchesWrapper: (s: string) => T,
-  noMatchesWrapper?: (s: string) => T
+  matchesWrapper: (s: string, index: number, array: SplitMatchesResult) => T,
+  noMatchesWrapper?: (s: string, index: number, array: SplitMatchesResult) => T
 ): T[]
 ```
 
@@ -35,15 +35,15 @@ Example:
 ```js
 import React from 'react'
 import chalk from 'chalk'
-import { highlightMatches } from 'highlight-matches-utils'
+import { highlightChars } from 'highlight-matches-utils'
 
-highlightMatches('How are you?', 'are', s => `(${s})`)
+highlightChars('How are you?', 'are', s => `(${s})`)
 // => ['How ', '(are)', ' you?']
 
-highlightMatches('How are you?', 'are', s => <mark>{s}</mark>)
+highlightChars('How are you?', 'are', (s, i) => <mark key={i}>{s}</mark>)
 // => ['How ', <mark>are</mark>, ' you?']
 
-highlightMatches('How are you?', 'are', chalk.reset, chalk.gray)
+highlightChars('How are you?', 'are', chalk.reset, chalk.gray)
 // =>
 // [
 //   "[90mHow [39m",
@@ -65,9 +65,9 @@ in a UI.
 export function highlightMatches<T>(
   text: string,
   matches: number[],
-  matchesWrapper: (s: string) => T,
-  noMatchesWrapper?: (s: string) => T
-): Array<T>,
+  matchesWrapper: (s: string, index: number, array: SplitMatchesResult) => T,
+  noMatchesWrapper?: (s: string, index: number, array: SplitMatchesResult) => T
+): T[]
 ```
 
 ### splitMatches
