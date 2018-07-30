@@ -72,8 +72,8 @@ describe('highlightMatches', () => {
   it('match using matchesWrapper that return React elements', () => {
     const text = 'The quick brown fox jumps over the lazy dog'
     const matches = match(text, 'brown')
-    const result = highlightMatches(text, matches, s =>
-      React.createElement('mark', { key: s }, s)
+    const result = highlightMatches(text, matches, (s, i) =>
+      React.createElement('mark', { key: i }, s)
     )
 
     expect(result).toMatchSnapshot()
@@ -89,8 +89,8 @@ describe('highlightMatches', () => {
     const result2 = highlightMatches(
       text,
       matches,
-      s => React.createElement('mark', { key: s }, s),
-      s => React.createElement('span', { key: s }, s)
+      (s, i) => React.createElement('mark', { key: i }, s),
+      (s, i) => React.createElement('span', { key: i }, s)
     )
 
     expect(result2).toMatchSnapshot()
@@ -137,8 +137,8 @@ describe('highlightChars', () => {
 
   it('match using matchesWrapper that return React elements', () => {
     const text = 'The quick brown fox jumps over the lazy dog'
-    const result = highlightChars(text, 'brown', s =>
-      React.createElement('mark', { key: s }, s)
+    const result = highlightChars(text, 'brown', (s, i) =>
+      React.createElement('mark', { key: i }, s)
     )
 
     expect(result).toMatchSnapshot()
@@ -154,8 +154,8 @@ describe('highlightChars', () => {
     const result2 = highlightChars(
       text,
       'brown',
-      s => React.createElement('mark', { key: s }, s),
-      s => React.createElement('span', { key: s }, s)
+      (s, i) => React.createElement('mark', { key: i }, s),
+      (s, i) => React.createElement('span', { key: i }, s)
     )
 
     expect(result2).toMatchSnapshot()
