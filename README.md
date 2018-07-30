@@ -25,8 +25,22 @@ in a UI.
 export function highlightChars<T>(
   text: string,
   chars: string,
-  matchesWrapper: (s: string, index: number, array: SplitMatchesResult) => T,
-  noMatchesWrapper?: (s: string, index: number, array: SplitMatchesResult) => T
+  matchesWrapper: (
+    s: string,
+    index: number,
+    array: {
+      isMatch: boolean
+      str: string
+    }[]
+  ) => T,
+  noMatchesWrapper?: (
+    s: string,
+    index: number,
+    array: {
+      isMatch: boolean
+      str: string
+    }[]
+  ) => T
 ): T[]
 ```
 
@@ -65,8 +79,22 @@ in a UI.
 export function highlightMatches<T>(
   text: string,
   matches: number[],
-  matchesWrapper: (s: string, index: number, array: SplitMatchesResult) => T,
-  noMatchesWrapper?: (s: string, index: number, array: SplitMatchesResult) => T
+  matchesWrapper: (
+    s: string,
+    index: number,
+    array: {
+      isMatch: boolean
+      str: string
+    }[]
+  ) => T,
+  noMatchesWrapper?: (
+    s: string,
+    index: number,
+    array: {
+      isMatch: boolean
+      str: string
+    }[]
+  ) => T
 ): T[]
 ```
 
