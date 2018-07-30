@@ -1,22 +1,32 @@
 // @flow
 
+declare type SplitMatchesResult = Array<{|
+  isMatch: boolean,
+  str: string
+|}>
+
 declare module.exports: {
   highlightChars<T>(
     text: string,
     chars: string,
-    matchesWrapper: (s: string) => T,
-    noMatchesWrapper?: (s: string) => T
+    matchesWrapper: (s: string, index: number, array: SplitMatchesResult) => T,
+    noMatchesWrapper?: (
+      s: string,
+      index: number,
+      array: SplitMatchesResult
+    ) => T
   ): Array<T>,
 
   highlightMatches<T>(
     text: string,
     matches: number[],
-    matchesWrapper: (s: string) => T,
-    noMatchesWrapper?: (s: string) => T
+    matchesWrapper: (s: string, index: number, array: SplitMatchesResult) => T,
+    noMatchesWrapper?: (
+      s: string,
+      index: number,
+      array: SplitMatchesResult
+    ) => T
   ): Array<T>,
 
-  splitMatches(
-    text: string,
-    matches: number[]
-  ): Array<{| isMatch: boolean, str: string |}>
+  splitMatches(text: string, matches: number[]): SplitMatchesResult
 }
