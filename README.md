@@ -8,7 +8,7 @@
 [![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/highlight-matches-utils.svg)](https://unpkg.com/highlight-matches-utils/)
 [![npm bundle size (minified)](https://img.shields.io/bundlephobia/minzip/highlight-matches-utils.svg)](https://unpkg.com/highlight-matches-utils/)
 
-[See an online example in CodeSandbox on how it can be used](https://codesandbox.io/s/71nom6zl21).
+[See an online example in CodeSandbox on how it can be used](https://codesandbox.io/s/92q8lmvn84).
 
 ## API
 
